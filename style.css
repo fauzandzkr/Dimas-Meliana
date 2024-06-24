@@ -209,6 +209,7 @@ main-body{
     width:100%; /* Full width */
     background-image: url(img/main-opening-rectangle.png);
     background-size: cover;
+    background-position: center;
     border-radius: 10px;
 }
 
