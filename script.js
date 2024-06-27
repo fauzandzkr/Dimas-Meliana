@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.getElementById('openButton').addEventListener('click', function() {
-    window.location.href = 'main.php';
+    window.location.href = 'main.html';
 });
 
 
