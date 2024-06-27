@@ -429,15 +429,15 @@ main-body{
 }
 
 /* Slide in animation */
-/* @keyframes slideInf {
+@keyframes slideInf {
     0% {
         transform: translateX(-100%);
     }
     100% {
         transform: translateX(-5%);
     }
-} */
-/* .text-layer-f {
+}
+.text-layer-f {
     position: absolute;
     top: 10px;
     width: 100%;
@@ -445,7 +445,7 @@ main-body{
     z-index: 3;
     padding: 0 20px;
     text-align: right;
-} */
+}
 
 .name-f {
     font-size: 6vw;
