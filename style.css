@@ -402,7 +402,6 @@ main-body{
 .container-mempelai-f {
     position: relative;
     width: 100%;
-    max-width: 430px;
     height: 100vh; /* Full viewport height */
     overflow: clip;
 }
