@@ -1,28 +1,35 @@
-:root{
-    --title: 5.5vw;
-    --text:4vw;
-}
+/* ------ START RESPONSIVE WEBSITE LIBRARY ------ */
+
+/* START Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {} */
+/* END Extra small devices (phones, 600px and down) */
+
+/* START Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {} */
+/* END Small devices (portrait tablets and large phones, 600px and up) */
+
+/* START Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {}  */
+/* END Medium devices (landscape tablets, 768px and up) */
+
+/* START Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {} */
+/* END Large devices (laptops/desktops, 992px and up) */
+
+/* START Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {} */
+/* END Extra large devices (large laptops and desktops, 1200px and up) */
+
+/* ------ END RESPONSIVE WEBSITE LIBRARY ------ */
+
+
 
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
 }
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    max-width: 430px; /* Set the maximum width for the body */
-    width: 100%;
-    font-family: 'Cormorant', serif;
-    margin: 0 auto; /* Center the body horizontally */
-}
-
 
 #loading {
     position: absolute;
@@ -39,43 +46,74 @@ body {
     color: #333;
 }
 
+/* START Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+
+:root{
+    --title     : 5.5vw;
+    --subtitle  : 4.5vw
+    --text      : 4vw;
+    --dimasmeli : 9vw;
+    --five      : 7.5vw
+}
+:root{
+    --mainFont  : 'Goudy Bookletter 1911', serif;
+    --secondFont: 'Montserrat', sans-serif;
+    --thirdFont : 'Cormorant', serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    /* max-width: 430px; */
+    width: 100%;
+    font-family: 'Cormorant', serif;
+    margin: 0 auto; /* Center the body horizontally */
+}
 
 #wrapper {
     background-image: url('img/lp-background.png');
     background-size: cover;
+    background-position: center;
     width: 100%;
-    height: auto; /* Automatically adjust height */
+    height: 100vh;
     padding-top: 250px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* position: relative; */
     overflow: clip;
-    display: flex;
     flex-direction: column;
-    aspect-ratio: 428 / 800; /* Maintain the aspect ratio */
+}
+
+@media only screen and (max-height: 700px){
+    #wrapper{
+        height: 100vh;
+        background-position: top;
+    }
 }
 
 #textContainer {
-    position: relative;
-    margin: 0 auto;
+    margin: 5vh auto 0 auto;
     z-index: 3;
     text-align: center;
-    color: #254336; /* Color of the text */
+    color: #254336;
     padding: 20px;
     /* background-color: rgb(235, 154, 49); */
     width: 80%;
-    font-size: 24px;
-    font-weight: 400;
     transition: opacity 0.8s;
     line-height: 1;
     font-family: 'Goudy Bookletter 1911', serif;
-    top: 10%;
 }
+
 #textContainer img{
-    width: 20px;
+    width: 5vw;
     margin: 0px 15px;
 }
 
@@ -88,16 +126,18 @@ body {
     margin: 5px 0;
 }
 #textContainer .maintext{
-    font-size: 36px;
+    font-size: var(--dimasmeli);
+    font-family: var(--mainFont);
+}
+#textContainer .datetext{
+    font-size: var(--title);
+    font-family: var(--mainFont);
 }
 .invited{
     display: flex;
     /* background-color: rgb(77, 47, 9); */
     align-items: center;
 }
-/* .invited p{
-    margin: 0 50px;
-} */
 .line2{
     width: 47%;
     height: 2px;
@@ -110,42 +150,38 @@ body {
     justify-content: space-between;
     width: 100%; /* Pastikan kontainer mengambil seluruh lebar */
 }
+.line-container p{
+    font-size: var(--subtitle);
+    font-family: var(--secondFont);
+}
 .line3 {
     width: 31%;
     height: 2px;
     background-color: #4C1501;
     margin: 10px 0; /* Atur margin vertikal sesuai kebutuhan */
 }
-
-
-
-/* ============ TO-GUEST */ 
-
 #to-guest{
-    margin-top: 15%;
+    margin: 3vh 0;
+    /* background-color: #203313; */
 }
 #to-guest p {
-    font-size: 24px;
     margin: 0;
     padding: 0 20px;
-    font-weight: 500;
 }
 #to-guest .browntext{
     color: #4C1501;
+    font-size: var(--subtitle);
 }
 #to-guest .maintext{
     color: #254336;
     font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 32px;
+    font-size: var(--five);
     /* padding:5px 0px; */
 }
-
-
 #openButton {
     display: block;
-    margin: 15% auto;
-    bottom: 15%;
-    padding: 10px 30px;
+    margin: 0 auto;
+    padding: 10px 25px;
     font-size: 16px;
     background: linear-gradient(to right, #5A7B6D, #104356); /* Linear gradient background */
     color: #fff;
@@ -153,8 +189,8 @@ body {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    /* position: absolute; */
     z-index: 10;
+    font-family: var(--secondFont);
 }
 
 #openButton:hover {
@@ -163,10 +199,29 @@ body {
 }
 
 #openButton img {
-    width: 15px;
-    font-size: 1px;
+    width: 7vw;
     padding-right: 10px;
 }
+
+
+}
+/* END Extra small devices (phones, 600px and down) */
+
+
+
+
+
+
+
+
+
+
+
+/* ============ TO-GUEST */ 
+
+
+
+
 
 
 
@@ -402,28 +457,30 @@ main-body{
 .container-mempelai-f {
     position: relative;
     width: 100%;
-    height: 100vh;
+    max-width: 430px;
+    height: 100vh; /* Full viewport height */
     overflow: clip;
 }
 
 .background-layer-f {
     position: relative;
-    background-image: url('img/main-mempelai-profileFemale.png');
+    background-image: url(img/main-mempelai-profileFemale.png);
     background-position: center;
     background-size: cover;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 0; 
+    z-index: 0; /* Behind other layers */
 }
 
 .image-layer-f{
     position: absolute;
     top: -0.5px;
     left: 0%;
-    width: 200%;
-    z-index: 5;
+    width: 200%; /* Adjust as needed */
+    /* transform: translate(-50%, -50%); Start from the left */
+    z-index: 5; /* Above background but below text */
     height: 100.5vh;
     animation: slideInf 4s forwards; 
 }
@@ -437,15 +494,16 @@ main-body{
         transform: translateX(-5%);
     }
 }
-/* .text-layer-f {
+.text-layer-f {
     position: absolute;
     top: 10px;
     width: 100%;
-    color: #332013; 
-    z-index: 3;
+    color: #332013; /* Ensure text is readable */
+    z-index: 3; /* Top layer */
     padding: 0 20px;
     text-align: right;
-} */
+    /* background-color: #607274; */
+}
 
 .name-f {
     font-size: 6vw;
