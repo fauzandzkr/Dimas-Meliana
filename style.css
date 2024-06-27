@@ -418,7 +418,7 @@ main-body{
     z-index: 0; 
 }
 
-/* .image-layer-f{
+.image-layer-f{
     position: absolute;
     top: -0.5px;
     left: 0%;
@@ -426,7 +426,7 @@ main-body{
     z-index: 5;
     height: 100.5vh;
     animation: slideInf 4s forwards; 
-} */
+}
 
 /* Slide in animation */
 /* @keyframes slideInf {
