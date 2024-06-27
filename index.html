@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <div id="loading">Loading...</div> -->
+    <div id="loading">Loading...</div>
     <div id="wrapper">
         <div id="textContainer">
             <div class="invited">
@@ -39,5 +39,51 @@
 
 
     <script src="script.js"></script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const loadingElement = document.getElementById('loading');
+        const wrapperElement = document.getElementById('wrapper');
+
+        const params = new URLSearchParams(window.location.search);
+        const guestName = params.get('name');
+        const guestNameElement = document.getElementById('guestName');
+
+        if (guestName) {
+            guestNameElement.textContent = guestName;
+        } else {
+            guestNameElement.textContent = 'Tamu Undangan';
+        }
+
+        const openButton = document.getElementById('openButton');
+        openButton.addEventListener('click', () => {
+            loadingElement.style.display = 'block';
+            wrapperElement.style.display = 'none';
+
+            // Load main content using AJAX
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'main.php', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Hide loading element
+                    loadingElement.style.display = 'none';
+
+                    // Insert main content into the body
+                    document.body.innerHTML = xhr.responseText;
+                    
+                    // Re-run the script.js for newly loaded content
+                    const newScript = document.createElement('script');
+                    newScript.src = 'script.js';
+                    document.body.appendChild(newScript);
+                }
+            };
+            xhr.send();
+        });
+    });
+    </script>
+
+    
 </body>
 </html>
