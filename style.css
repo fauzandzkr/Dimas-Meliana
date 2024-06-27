@@ -408,7 +408,7 @@ main-body{
 
 .background-layer-f {
     position: relative;
-    background-image: url(img/main-mempelai-profileFemale.png);
+    background-image: url('img/main-mempelai-profileFemale.png');
     background-position: center;
     background-size: cover;
     top: 0;
@@ -429,14 +429,14 @@ main-body{
 }
 
 /* Slide in animation */
-/* @keyframes slideInf {
+@keyframes slideInf {
     0% {
         transform: translateX(-100%);
     }
     100% {
         transform: translateX(-5%);
     }
-} */
+}
 /* .text-layer-f {
     position: absolute;
     top: 10px;
