@@ -52,10 +52,10 @@
 
 :root{
     --title     : 5.5vw;
-    --subtitle  : 4.5vw
+    --subtitle  : 4.5vw;
     --text      : 4vw;
     --dimasmeli : 9vw;
-    --five      : 7.5vw
+    --five      : 7.5vw;
 }
 :root{
     --mainFont  : 'Goudy Bookletter 1911', serif;
